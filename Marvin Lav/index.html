@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hex Color Picker</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Hex Color Picker">
+  <meta name="author" content="Marvin Lav">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Hex Color Picker</h1>
+    <h2></h2>
+    <p>Marvin Lav<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>The Concept</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The idea of this Shiny app is very simple.
+You put in values of Red, Green and Blue to generate a color.
+This can be used to teach Color Theory and the various ways
+we represent colors in this day and age.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Exposure to Hexadecimal</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Another promise of this app is the exposure to Hexadecimal. There are a number of people who know hexadicmal representation fairly well, but for those that do not, you can use this app to get a feel of how the numbers change as colors change.</p>
+
+<p>For example, this is how pure Red looks like, Red = 255, Green = 0, Blue = 0.</p>
+
+<pre><code class="r">redHex&lt;- createHex(red=255,green=0,blue=0) #custom function
+print(redHex)
+</code></pre>
+
+<pre><code>## [1] &quot;#FF0000&quot;
+</code></pre>
+
+<pre><code class="r">plot(c(100, 200), c(300, 450), type= &quot;n&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;, main=&quot;Color of Input&quot;)
+rect(100, 200, 300, 450, col = redHex, border = &quot;black&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-2.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Inverted color</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>How would it&#39;s inverted color look like? It would just be flipping the numbers. In the first case, Red = 255, Green = 0, Blue = 0. In this inverted case, Red = 0, Green = 255, Blue = 255.</p>
+
+<pre><code class="r">invertRedHex &lt;- invertHex(createHex(red=255,green=0,blue=0))
+print(invertRedHex)
+</code></pre>
+
+<pre><code>## [1] &quot;#00FFFF&quot;
+</code></pre>
+
+<pre><code class="r">plot(c(100, 200), c(300, 450), type= &quot;n&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;, main=&quot;Color of Input&quot;)
+rect(100, 200, 300, 450, col = invertRedHex, border = &quot;black&quot;)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-3.png" alt="plot of chunk unnamed-chunk-3"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Conclusion</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Playing with this app will hopefully give a better understanding of how the RGB changes colors as the values change. While not having immediate effect, this insight of how color works in the RGB scheme could help inspire some thinking in other areas. </p>
+
+<p>Steve Job&#39;s took a calligraphy class in college, and that forever changed how computer typography looked.</p>
+
+<p>Perhaps an artist or someone who isn&#39;t very intimate with computer representation could benefit, albeit unconciously.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='The Concept'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Exposure to Hexadecimal'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Inverted color'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Conclusion'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

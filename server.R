@@ -22,9 +22,9 @@ fillwithzero <- function(hexstring,num_char){
 
 createHex <- function(red,green,blue){
   redHex <- fillwithzero(sprintf('%X',red),2)
-  blueHex <- fillwithzero(sprintf('%X',green),2)
-  greenHex <- fillwithzero(sprintf('%X',blue),2)
-  mergedHex <- paste0(redHex,blueHex,greenHex)
+  blueHex <- fillwithzero(sprintf('%X',blue),2)
+  greenHex <- fillwithzero(sprintf('%X',green),2)
+  mergedHex <- paste0(redHex,greenHex,blueHex)
   colorHex <- paste0("#",mergedHex)
   return(colorHex)
 }
@@ -47,12 +47,12 @@ shinyServer(
     output$invertHex <- renderPrint({invertHex(createHex(input$red,input$blue,input$green))})
     output$hexPlot <- renderPlot({
       plot(c(100, 200), c(300, 450), type= "n", xlab = "", ylab = "", main="Color of Input")
-      rect(100, 200, 300, 450, col = createHex(input$red,input$blue,input$green), border = "black")
+      rect(100, 200, 300, 450, col = createHex(input$red,input$green,input$blue), border = "black")
     })
 
     output$ihexPlot <- renderPlot({
     plot(c(100, 200), c(300, 450), type= "n", xlab = "", ylab = "", main="Color of Inverted Input")
-    rect(100, 200, 300, 450, col = invertHex(createHex(input$red,input$blue,input$green)), border = "black")
+    rect(100, 200, 300, 450, col = invertHex(createHex(input$red,input$green,input$blue)), border = "black")
     })
   }
 )
